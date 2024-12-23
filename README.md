@@ -1,3 +1,3 @@
 # Leetcode
 
-![LeetCode Stats](https://leetcode.card.workers.dev/youssefelghamour?theme=default&font=baloo&extension=null)
+![LeetCode Stats](https://leetcard.jacoblin.cool/youssefelghamour?theme=dark&font=Karma&ext=heatmap)
