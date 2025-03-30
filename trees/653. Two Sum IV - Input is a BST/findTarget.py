@@ -19,8 +19,8 @@ class Solution(object):
               3   7  
             Iteration 1: current1 = 3, current2 = 15, stack1 = [10, 5, 3], stack2 = [10, 15]
             Iteration 2: current1 = 3, current2 = 10, stack1 = [10, 5, 3], stack2 = [10]
-            Iteration 3: current1 = 3, current2 = 7, stack1 = [10, 5, 3], stack2 = [5, 7]
-            Iteration 4: current1 = 5, current2 = 7, stack1 = [10, 5], stack2 = [5, 7]
+            Iteration 3: current1 = 3, current2 = 7,  stack1 = [10, 5, 3], stack2 = [5, 7]
+            Iteration 4: current1 = 5, current2 = 7,  stack1 = [10, 5],    stack2 = [5, 7]
         """
         if not root:
             return False
@@ -34,7 +34,7 @@ class Solution(object):
         while current1:
             stack1.append(current1)
             current1 = current1.left
-            
+
         # Initialize the rightmost node
         while current2:
             stack2.append(current2)
