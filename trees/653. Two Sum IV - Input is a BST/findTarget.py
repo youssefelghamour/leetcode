@@ -30,16 +30,18 @@ class Solution(object):
         stack1 = []  # Inorder stack (from smallest value)
         stack2 = []  # Reverse inorder stack (from highest value)
 
-        # Initialize leftmost and rightmost nodes
+        # Initialize the leftmost node
         while current1:
             stack1.append(current1)
             current1 = current1.left
+            
+        # Initialize the rightmost node
         while current2:
             stack2.append(current2)
             current2 = current2.right
 
         while stack1 and stack2:  # 
-            # We only pop to go forwar (inorder) or backwards (reverse inorder)
+            # We only pop to go forwards (inorder) or backwards (reverse inorder)
             current1 = stack1[-1]
             current2 = stack2[-1]
 
@@ -48,9 +50,9 @@ class Solution(object):
                 break
 
             if current1.val + current2.val < k:
+                # If the sum is smaller, move the left pointer (smaller value): inorder: left -> parent -> right
                 # Pop from stack1 so we can move forward in inorder traversal
                 current1 = stack1.pop()
-                # If the sum is smaller, move the right pointer (bigger value): reverse inorder: left -> parent -> right
                 if current1.right:
                     # The current node is the parent (already processed the left then we popped form the stack1)
                     # So we need to process the right side that has the next bigger value
@@ -60,9 +62,9 @@ class Solution(object):
                         stack1.append(current1)
                         current1 = current1.left
             elif current1.val + current2.val > k:
+                # If the sum is greater, move the right pointer (greater value): reverse inorder: right -> parent -> left
                 # Pop from stack1 so we can move backwards in reverse inorder traversal
                 current2 = stack2.pop()
-                # If the sum is greater, move the left pointer (lower value): reverse inorder: right -> parent -> left
                 if current2.left:
                     # The current node is the parent (already processed the right then we popped form the stack2)
                     # So we need to process the left side that has the next smaller value
