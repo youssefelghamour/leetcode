@@ -15,7 +15,7 @@ Solve it without using the built-in `Promise.all` function.
 ## Example 1
 
 - **Input:**
-  ```json
+  ```javascript
   functions = [
     () => new Promise(resolve => setTimeout(() => resolve(5), 200))
   ]
@@ -35,7 +35,7 @@ Solve it without using the built-in `Promise.all` function.
 ## Example 2
 
 - **Input:**
-  ```json
+  ```javascript
   functions = [
       () => new Promise(resolve => setTimeout(() => resolve(1), 200)), 
       () => new Promise((resolve, reject) => setTimeout(() => reject("Error"), 100))
@@ -53,7 +53,7 @@ Solve it without using the built-in `Promise.all` function.
 ## Example 3
 
 - **Input:**
-  ```json
+  ```javascript
   functions = [
       () => new Promise(resolve => setTimeout(() => resolve(4), 50)), 
       () => new Promise(resolve => setTimeout(() => resolve(10), 150)), 
